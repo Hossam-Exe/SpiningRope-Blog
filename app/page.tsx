@@ -34,7 +34,7 @@ const posts = await client.fetch(postsQuery);
 
 
   return (
-    <main className='px-[13rem] max-md:px-[6rem] max-sm:px-[4rem] py-12 cursor-none bg-white  dark:bg-gradient-black '>
+    <main className='px-[8rem]  max-md:px-[3rem] py-12 cursor-none bg-white  dark:bg-gradient-black '>
 
        <Categories /> 
       
