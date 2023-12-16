@@ -21,6 +21,7 @@ type Props = {
  export const generateMetadata=({ params }: Props): Metadata =>{
   return{
       title: `${params.slug.replaceAll('-',' ')}`,
+    description: `${params.slug.replaceAll('-',' ')}`,
   }
  }
 
