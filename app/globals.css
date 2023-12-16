@@ -51,23 +51,7 @@
 
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: 19, 19, 19;
-  
-    --border: 255, 255, 255;
-   
-  
-    --copy-primary: 250, 250, 250;
-    --copy-secondary:  57,57,63 ;
-
-    
-    
-    --cta: 74,74,74;
-    --cta-active:208,208,208;
-    --cta-text: 250, 250, 250;
-    --cta-text-active:  57,57,63 ;
-  
-  }
+ 
   .dark {
     --my-gradient: radial-gradient(circle at 80%,
     rgb(34, 34, 34) 2%,
