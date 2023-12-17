@@ -36,7 +36,7 @@ const Hero = ({posts}:Props) => {
           src={"/icon/hero.webp"}
           alt={"Post Image"}
           width={1000}
-          height={1000}
+          height={750}
           loading='eager'
           />  
             
