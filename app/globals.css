@@ -8,11 +8,13 @@
   @font-face{
     font-family: louis;
     src: url(./Fonts/Louis\ George\ Cafe.woff2) format("woff2");
+    font-display: swap;
   }
 
   @font-face{
     font-family: moon-get;
     src: url(./Fonts/moon_get-Heavy.woff2) format("woff2");
+    font-display: swap;
   }
 }
 :root {
