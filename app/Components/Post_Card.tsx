@@ -59,7 +59,7 @@ export default async function Post_Card({ posts }: Props) {
             dark:hover:bg-cta-active border flex justify-center items-center    
             hover:text-copy-secondary dark:hover:text-copy-secondary
               transition-all duration-100 hover:scale-105 mt-4 ">
-              <button className=" font-Louis font-bold text-white/85   flex justify-center items-center gap-2 ">To Post
+              <button className=" font-Louis font-bold text-white/85   flex justify-center items-center gap-2 ">To Details
 
               </button>
 
