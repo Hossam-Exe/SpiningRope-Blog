@@ -64,12 +64,12 @@ const Navigation = () => {
       >
       </div>
       <div
-        className="h-12   bg-background drop-shadow-sm flex justify-center items-center gap-2 p-4  border-border dark:border-border border-b relative"
+        className="h-full   bg-background drop-shadow-sm flex justify-center items-center gap-2 p-4  border-border dark:border-border border-b relative"
       >
        
         <div className="flex-1 flex justify-start items-center gap-4 pr-8  ">
           <div
-            className="hidden rounded-br-md absolute top-[48px] left-0 flex-col gap-4  bg-background  dark:bg-background  w-72 h-74 p-6  
+            className="hidden rounded-br-md absolute top-[55px] left-0 flex-col gap-4   bg-background  dark:bg-background  w-72 h-74 p-6  
                border-border dark:border-border border shadow-lg ml-6"
             id="dialog"
             ref={dialogRef}
