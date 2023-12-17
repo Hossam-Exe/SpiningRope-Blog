@@ -33,7 +33,7 @@ const Hero = ({posts}:Props) => {
         
           <Image
           className="   rounded-xl  max-sm:hidden   absolute right-[5%]    bottom-[-15px]  w-[35%] "
-          src={"/icon/hero.png"}
+          src={"/icon/hero.webp"}
           alt={"Post Image"}
           width={1000}
           height={1000}
