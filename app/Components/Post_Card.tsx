@@ -17,18 +17,20 @@ export default async function Post_Card({ posts }: Props) {
 
 {posts?.length > 0 ? (
     posts.map((post) => (
-      
-      <article key={post._id} className=" flex   justify-center items-start gap-2 flex-col  w-full shadow-md">
+      <ClientRoute route={`/post/${post.slug.current}`}>
+      <article key={post._id} className=" flex   justify-center items-start gap-2 flex-col  
+      transition-all duration-200 hover:scale-[1.02] w-full shadow-md">
 
         <Image
-          className=" border-border dark:border-border border-4  rounded w-full h-48 object-cover"
+          className=" border-border dark:border-border border-4  rounded w-full h-48   object-cover"
           src={urlFor(post.mainImage).url()}
           alt={"Post Image"}
           width={"500"}
           height={"500"}
+          
         />
 
-        <h2 className="  text-copy-primary dark:text-copy-primary h-[56px]  line-clamp-2 text-lg   font-bold">{post.title}</h2>
+        <h2 className="  text-copy-primary dark:text-copy-primary h-[56px]  line-clamp-2 text-lg hover:underline   font-bold">{post.title}</h2>
         <p className=" text-copy-primary/80 dark:text-copy-primary/80    font-Louis overflow-clip  line-clamp-2">{post.description}</p>
 
         <hr className="  border-border dark:border-border   w-full h-[1px] " />
@@ -53,26 +55,28 @@ export default async function Post_Card({ posts }: Props) {
         </div>
 
         <div className=" w-full"> 
-          <ClientRoute route={`/post/${post.slug.current}`}>
+         
 
             <div className="  bg-cta dark:bg-cta  h-[30px] rounded border-white/20 
             dark:hover:bg-cta-active border flex justify-center items-center    
             hover:text-copy-secondary dark:hover:text-copy-secondary
               transition-all duration-100 hover:scale-105 mt-4 ">
-              <button className=" font-Louis font-bold text-white/85   flex justify-center items-center gap-2 ">To Details
+              <button className=" font-Louis font-bold text-white/85   flex justify-center items-center gap-2 ">Read More
 
               </button>
 
             </div>
-          </ClientRoute>
+          
         </div>
       </article>
+      </ClientRoute>
       ))
 ) : (
       <div className='  flex   ml-4  h-96 justify-center items-center gap-4 p-4 mb-12'>
         <h2 className='text-2xl   text-copy-primary dark:text-copy-primary font-MoonGet 
         uppercase opacity-30  whitespace-nowrap tracking-widest'>No Category Found</h2>
       </div>
+      
   )}
 
   </div>
