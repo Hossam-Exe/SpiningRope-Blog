@@ -37,7 +37,7 @@ const Hero = ({posts}:Props) => {
           alt={"Post Image"}
           width={1000}
           height={1000}
-          
+          loading='eager'
           />  
             
        
