@@ -8,7 +8,7 @@ export const portableTextSerializer = {
 
  
   h1: (props: any) => {
-    return <h1 className=" text-5xl py-10 text-copy-primary dark:text-copy-primary  font-bold" {...props} />;
+    return <h1 className=" text-5xl py-10 text-copy-primary dark:text-copy-primary max-sm:text-5xl  font-bold" {...props} />;
   },
   h2: (props: any) => {
     return <h2 className="text-4xl py-10  text-copy-primary dark:text-copy-primary font-bold" {...props} />;
