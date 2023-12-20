@@ -41,7 +41,7 @@ const posts = await client.fetch(postsQuery);
     
       <Hero posts={posts} />
 
-      <Post_Card posts={posts} />
+      <Post_Card PostLimit={9} posts={posts} />
 
      
 
