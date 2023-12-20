@@ -1,24 +1,47 @@
-
+"use client"
 import { urlFor } from "@/lib/getClient";
 import Image from "next/image"
-import { CalendarIcon } from "@heroicons/react/24/outline"
+
 import ClientRoute from "./ClientRoute";
+
+import { useEffect, useState } from "react";
+import ReactPaginate from "react-paginate";
 
 
 type Props = {
   posts: Post[];
+  PostLimit:number;
 }
 
-export default async function Post_Card({ posts }: Props) {
+export default  function Post_Card({ posts,PostLimit }: Props) {
+
+  const [currentItems, setCurrentItems] = useState(posts||PostLimit);
+  const [pageCount, setPageCount] = useState(0);
+  const [itemOffset, setItemOffset] = useState(0);
+
+
+  useEffect(() => {
+    const endOffset = itemOffset + PostLimit;
+    setCurrentItems(posts.slice(itemOffset, endOffset));
+    setPageCount(Math.ceil(posts.length / PostLimit));
+  }, [itemOffset, PostLimit, posts]);
 
 
 
-  return (<div className=' grid grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1  gap-y-6 gap-x-4     '>
+  const handlePageClick = (event: any) => {
+    const newOffset = (event.selected * PostLimit) % posts.length;
+    setItemOffset(newOffset);
+  };
 
-{posts?.length > 0 ? (
-    posts.map((post) => (
-      <ClientRoute route={`/post/${post.slug.current}`}>
-      <article key={post._id} className=" flex   justify-center items-start gap-2 flex-col  
+
+  return (
+    <>
+  <div className=' grid grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1  gap-y-6 gap-x-4     '>
+   {posts?.length > 0 ? (
+    currentItems&& currentItems.slice(0,PostLimit).map((post) => (
+     
+      <ClientRoute key={post._id} route={`/post/${post.slug.current}`}>
+      <article  className=" flex   justify-center items-start gap-2 flex-col  
       transition-all duration-200 hover:scale-[1.02] w-full shadow-md">
 
         <Image
@@ -71,16 +94,47 @@ export default async function Post_Card({ posts }: Props) {
       </article>
       </ClientRoute>
       ))
-) : (
-      <div className='  flex   ml-4  h-96 justify-center items-center gap-4 p-4 mb-12'>
+      ) : (
+        <div className='  flex   ml-4    h-96 justify-center items-center gap-4 p-4 mb-12'>
         <h2 className='text-2xl   text-copy-primary dark:text-copy-primary font-MoonGet 
         uppercase opacity-30  whitespace-nowrap tracking-widest'>No Category Found</h2>
       </div>
       
-  )}
+      )}
 
-  </div>
+  </div >
+    <div className=" mt-6 flex   justify-center items-center  w-full gap-2 " >
+       <hr className='  border-border/30 dark:border-border/30  h-[1px] w-[20rem]' />
+       <ReactPaginate
+        className="   flex justify-center items-center gap-2"
+        activeClassName=" bg-cta/50 dark:bg-cta-active text-copy-secondary dark:hover:text-copy-secondary  "
+        breakLabel="..."
+        breakClassName=" text-copy-primary dark:hover:text-copy-primary"
+        nextLabel=">"
+        nextClassName="bg-cta dark:bg-cta dark:hover:bg-cta-active h-[20px] rounded border-white/20 hover:text-copy-secondary 
+        p-1 px-2 font-bold dark:hover:text-copy-secondary transition-all duration-100 hover:scale-105 
+        whitespace-nowrap flex justify-center items-center"
+        onPageChange={handlePageClick}
+        pageRangeDisplayed={5}
+        pageCount={pageCount}
+        renderOnZeroPageCount={null}
+        previousLabel="<"
+        previousClassName="bg-cta dark:bg-cta dark:hover:bg-cta-active h-[20px] rounded border-white/20 hover:text-copy-secondary 
+        p-1 px-2 font-bold dark:hover:text-copy-secondary transition-all duration-100 hover:scale-105 
+        whitespace-nowrap flex justify-center items-center"
+        pageClassName=" bg-cta dark:bg-cta  h-[30px] w-[30px]    rounded border-white/20 
+        dark:hover:bg-cta-active border flex justify-center items-center    
+        hover:text-copy-secondary dark:hover:text-copy-secondary
+          transition-all duration-100 hover:scale-105  font-bold    "
+          
+         
+       />
+       <hr className=' border-border/30 dark:border-border/30  h-[1px] w-[20rem]' />
+    </div>
 
+  
+
+  </>
   )
 }
 
