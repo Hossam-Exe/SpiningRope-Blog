@@ -55,21 +55,21 @@ const Navigation = () => {
   return (
     <>
       
-      <nav className="sticky  top-0 w-full h-14   z-20  ">
+      <nav className="sticky  top-0 w-full h-14    z-20  ">
       
       <div
         id="backdrop"
         ref={backdropRef} onPointerDown={handleBackdropClick}
-        className="fixed inset-0  w-full h-screen bg-zinc-950 hidden opacity-30 transition-all"
+        className="fixed inset-0   h-screen  bg-zinc-950 hidden opacity-30 transition-all"
       >
       </div>
       <div
-        className="h-full   bg-background drop-shadow-sm flex justify-center items-center gap-2 p-4  border-border dark:border-border border-b relative"
+        className="h-full     bg-background  drop-shadow-sm flex justify-center items-center gap-2 p-4  border-border dark:border-border border-b relative"
       >
        
-        <div className="flex-1 flex justify-start items-center gap-4 pr-8  ">
+        <div className="flex-1 flex justify-start items-center  gap-4 pr-8  ">
           <div
-            className="hidden rounded-br-md absolute top-[55px] left-0 flex-col gap-4   bg-background  dark:bg-background  w-72 h-74 p-6  
+            className="hidden rounded-br-md absolute top-[55px] left-0 flex-col gap-4    bg-background  dark:bg-background  w-72 h-74 p-6  
                border-border dark:border-border border shadow-lg ml-6"
             id="dialog"
             ref={dialogRef}
@@ -139,7 +139,7 @@ const Navigation = () => {
             onPointerDown={handleOpen}
             className="cursor-pointer absolute  z-[5] left-0 top-0 
              bg-copy-primary/30 dark:bg-copy-secondary/30 hover:bg-copy-primary/60  dark:hover:bg-copy-secondary 
-              w-20 h-full flex justify-center items-center transition-all"
+              w-20 h-full flex justify-center items-center  transition-all"
           >
            <svg viewBox="0 0 287 412"  className='w-6 h-6  fill-current  text-copy-primary dark:text-copy-primary'>
     <g  clip-path="url(#a)">
@@ -172,7 +172,7 @@ const Navigation = () => {
           </div>
         </div>
         <Switcher/>
-        <div className="flex-1 flex justify-end gap-1 max-md:hidden mr-6  z-[5]">
+        <div className="flex-1 flex justify-end  gap-1 max-md:hidden mr-6  z-[5]">
           <Date_Time />
         </div>
       </div>
