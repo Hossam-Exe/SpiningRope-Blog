@@ -26,7 +26,7 @@ type Props = {
  }
 
 
-export const revalidate = 60 // revalidate at most every 1 hour
+//export const revalidate = 60 // revalidate at most every 1 min
 
 export async function generateStaticParams(){
 
