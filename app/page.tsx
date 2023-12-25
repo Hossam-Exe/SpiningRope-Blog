@@ -21,7 +21,7 @@ const postsQuery = groq`
 `;
 
 
-//export const revalidate = 60 // revalidate at most every 1 min
+export const revalidate = 60 // revalidate at most every 1 min
 
 
 export default async function Home() {
