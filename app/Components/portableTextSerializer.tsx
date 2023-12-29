@@ -35,7 +35,7 @@ export const portableTextSerializer = {
  
 
   normal: (props: any) => {
-    return <p className="text-justify text-copy-primary dark:text-copy-primary" {...props} />;
+    return <p className="text-justify text-copy-primary my-1 dark:text-copy-primary" {...props} />;
   },
 
   blockquote: ({ children }: any) => {
