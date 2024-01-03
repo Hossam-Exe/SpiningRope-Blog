@@ -12,7 +12,7 @@ interface Props {
       slug: string;
   };
 }
-
+export const revalidate = 60 
 export const generateMetadata=({ params }: Props): Metadata =>{
   return{
       title: `Categories/${params.slug.replaceAll('-',' ')}`,
