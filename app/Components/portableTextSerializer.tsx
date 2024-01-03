@@ -8,7 +8,7 @@ export const portableTextSerializer = {
 
  
   h1: (props: any) => {
-    return <h1 className=" text-5xl py-10 text-copy-primary dark:text-copy-primary max-sm:text-5xl  font-bold" {...props} />;
+    return <h1 className=" text-5xl py-10 text-copy-primary dark:text-copy-primary  font-bold" {...props} />;
   },
   h2: (props: any) => {
     return <h2 className="text-4xl py-10  text-copy-primary dark:text-copy-primary font-bold" {...props} />;
@@ -21,27 +21,30 @@ export const portableTextSerializer = {
   },
 
 
-  li: ({ children }: any) => {
-    return <li className="ml-4 list-inside" {...children} />;
+  li: ( props : any) => {
+    return <li className="ml-4 list-inside text-copy-primary dark:text-copy-primary" {...props} />;
   },
-  ol: ({ children }: any) => {
-    return <ol className="mt-lg list-decimal" {...children} />;
+  ol: ( props : any) => {
+    return <ol className="mt-lg list-decimal text-copy-primary dark:text-copy-primary" {...props} />;
   },
-  ul: ({ children }: any) => {
-    return <ul className="ml-10  py-5  list-disc  space-y-5" {...children} />;
+  ul: ( props : any) => {
+    return <ul className="ml-10  py-5  list-disc text-copy-primary dark:text-copy-primary  space-y-5" {...props} />;
   },
 
 
  
-code: (props: any) => {
-    return <span className="font-mono leading-normal bg-gray-700 rounded border-white/20 p-1  text-white   " {...props} />;
+
+  
+  code: (props: any) => {
+  return <span className="font-mono leading-normal bg-gray-700/20 dark:bg-gray-700 rounded border-white/20  px-1 mx-1  text-red-600   " {...props} />;
   },
   normal: (props: any) => {
     return <p className="text-justify text-copy-primary my-6 dark:text-copy-primary" {...props} />;
   },
 
-  blockquote: ({ children }: any) => {
-    return  <blockquote className=" border-l-white rounded   border-l-4  py-5 " {...children} />;
+  blockquote: ( props : any) => {
+    return  <blockquote className=" border-l-slate-900 dark:border-l-white rounded text-2xl 
+      border-l-4  p-3  text-copy-primary dark:text-copy-primary bg-[#478ef8]/20 " {...props} />;
   },
 
   link:(props: any) => {
