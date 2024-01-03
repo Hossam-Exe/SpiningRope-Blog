@@ -34,7 +34,7 @@ export const portableTextSerializer = {
 
  
 code: (props: any) => {
-    return <span className="font-mono leading-normal bg-gray-700 rounded border-white/20 p-1 " {...props} />;
+    return <span className="font-mono leading-normal bg-gray-700 rounded border-white/20 p-1  dark:bg-gray-700/20 text-copy-primary  dark:text-copy-primary" {...props} />;
   },
   normal: (props: any) => {
     return <p className="text-justify text-copy-primary my-6 dark:text-copy-primary" {...props} />;
