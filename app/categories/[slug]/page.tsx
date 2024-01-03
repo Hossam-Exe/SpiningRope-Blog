@@ -12,12 +12,14 @@ interface Props {
       slug: string;
   };
 }
-export const revalidate = 60 
 export const generateMetadata=({ params }: Props): Metadata =>{
   return{
       title: `Categories/${params.slug.replaceAll('-',' ')}`,
   }
  }
+
+export const revalidate = 60 // revalidate at most every 1 min
+
 
 export default async function Post_Card_Category({ params: { slug } }: Props) {
 
