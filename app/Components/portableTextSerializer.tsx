@@ -44,7 +44,7 @@ export const portableTextSerializer = {
 
   blockquote: ( props : any) => {
     return  <blockquote className=" border-l-slate-900 dark:border-l-white rounded text-2xl 
-      border-l-4  p-3  text-copy-primary dark:text-copy-primary bg-[#478ef8]/20 " {...props} />;
+      border-l-4  p-3  text-copy-primary dark:text-copy-primary  " {...props} />;
   },
 
   link:(props: any) => {
