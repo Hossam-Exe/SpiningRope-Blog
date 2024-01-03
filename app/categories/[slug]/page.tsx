@@ -18,7 +18,7 @@ export const generateMetadata=({ params }: Props): Metadata =>{
   }
  }
 
-export const revalidate = 60 // revalidate at most every 1 min
+
 
 
 export default async function Post_Card_Category({ params: { slug } }: Props) {
