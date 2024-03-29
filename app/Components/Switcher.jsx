@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import useDarkSide from './useDarkSide';
 import { DarkModeSwitch } from 'react-toggle-dark-mode';
 
@@ -12,12 +12,17 @@ export default function Switcher() {
     setDarkSide(checked);
   };
 
+  useEffect(() => {
+    setTheme(colorTheme);
+    
+  }, []);
+
   return (
    
-      <>
-        <DarkModeSwitch  className=' mr-6'  checked={darkSide} onChange={toggleDarkMode} 
+      
+        <DarkModeSwitch  className=' mr-6 '    checked={darkSide} onChange={toggleDarkMode} 
         size={24} />
-      </>
+      
     
     
   );
