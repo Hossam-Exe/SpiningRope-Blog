@@ -5,6 +5,7 @@ import { groq } from "next-sanity";
 import PortableText from "react-portable-text";
 import { CalendarIcon } from "@heroicons/react/24/outline"
 import { portableTextSerializer } from "../../Components/portableTextSerializer"
+import TopButton from "../../Components/TopButton"
 import type { Metadata } from 'next'
 
 
@@ -26,7 +27,7 @@ type Props = {
  }
 
 
-export const revalidate = 60 // revalidate at most every 1 min
+export const revalidate = 60 // revalidate at most every 1 hour
 
 export async function generateStaticParams(){
 
@@ -61,7 +62,7 @@ async function Post({ params: { slug } }: Props) {
 
   return (
     <main key={post._id} className="bg-white   dark:bg-gradient-black px-[13rem] max-md:px-[6rem] max-sm:px-[2rem] py-12 flex-col justify-start items-center cursor-none  " >
-   
+      <TopButton />
       <article>
         <header className=" flex justify-between items-center">
           {post.categories.map((category) => (
