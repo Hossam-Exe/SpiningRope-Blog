@@ -33,7 +33,7 @@ const TopButton = () => {
   }); 
 
   return (
-    <button className=" z-20 fixed bottom-4 right-[50%] translate-x-[50%] mx-2 bg-cta dark:bg-copy-primary/80 
+    <button className=" z-20 fixed bottom-4  right-20 max-sm:right-6 mx-2 bg-cta dark:bg-copy-primary/80 
     text-copy-secondary dark:text-copy-secondary  rounded p-1 " onClick={scrollToTop} style={{display: visible ? 'inline' : 'none'}}>
 
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
