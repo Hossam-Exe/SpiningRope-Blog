@@ -1,7 +1,7 @@
 'use client'
 
 
-import React, {useState} from 'react'; 
+import React, {useState,useEffect} from 'react'; 
 
 
 const TopButton = () => {
@@ -23,8 +23,14 @@ const TopButton = () => {
       behavior: 'smooth'
     });
   };
+  useEffect(() => {
+   
+    window.addEventListener('scroll', toggleVisible); 
 
-  window.addEventListener('scroll', toggleVisible); 
+    return () => {
+        window.removeEventListener('scroll', toggleVisible); 
+    };
+  }); 
 
   return (
     <button className=" z-20 fixed bottom-4 right-[50%] translate-x-[50%] mx-2 bg-cta dark:bg-copy-primary/80 
