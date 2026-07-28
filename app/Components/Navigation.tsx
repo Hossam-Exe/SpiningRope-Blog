@@ -164,7 +164,7 @@ const Navigation = () => {
                font-MoonGet transition duration-200 ease-in-out"
             >Home</Link>
             <Link
-              href="https://spiningrope.netlify.app/"
+              href="https://spiningrope.vercel.app/"
               className="text-[0.60rem] tracking-widest uppercase text-copy-primary/80
                dark:text-copy-primary/70 hover:text-copy-primary dark:hover:dark:text-copy-primary
                 font-MoonGet transition duration-200 ease-in-out"
